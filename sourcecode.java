@@ -2,9 +2,9 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class CarMart {
-    private static final String URL = "jdbc:postgresql://localhost:5432/carmart";
-    private static final String USER = "postgres"; // Change if needed
-    private static final String PASSWORD = "password"; // Change if needed
+    private static final String URL = "jdbc:postgresql://localhost:5433/carmart";
+    private static final String USER = "postgres"; 
+    private static final String PASSWORD = ""; 
 
     private static Connection connect() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
