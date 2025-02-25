@@ -1,10 +1,10 @@
--- 1️⃣ Create Database (Run this first, if needed)
+--  Create Database (Run this first, if needed)
 CREATE DATABASE CarMart;
 
--- 2️⃣ Use the Database (if using psql)
+--  Use the Database (if using psql)
 \c CarMart;
 
--- 3️⃣ Create Table for Cars
+--  Create Table for Cars
 CREATE TABLE Cars (
     CarID SERIAL PRIMARY KEY,
     Company VARCHAR(50) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE Cars (
     Sold BOOLEAN DEFAULT FALSE
 );
 
--- 4️⃣ Insert Sample Car Data
+--  Insert Sample Car Data
 INSERT INTO Cars (Company, Model, Seater, FuelType, Type, Price, Sold) VALUES
 ('Toyota', 'Corolla', 5, 'Petrol', 'Sedan', 22000.00, FALSE),
 ('Honda', 'Civic', 5, 'Diesel', 'Sedan', 25000.00, FALSE),
@@ -25,22 +25,22 @@ INSERT INTO Cars (Company, Model, Seater, FuelType, Type, Price, Sold) VALUES
 ('Hyundai', 'Creta', 5, 'Diesel', 'SUV', 18000.00, FALSE),
 ('BMW', 'X5', 5, 'Petrol', 'SUV', 60000.00, TRUE);
 
--- 5️⃣ Retrieve All Unsold Cars
+--  Retrieve All Unsold Cars
 SELECT * FROM Cars WHERE Sold = FALSE;
 
--- 6️⃣ Retrieve Cars by Specific Company
+--  Retrieve Cars by Specific Company
 SELECT * FROM Cars WHERE Company = 'Toyota';
 
--- 7️⃣ Retrieve Cars by Type (Example: SUV)
+--  Retrieve Cars by Type (Example: SUV)
 SELECT * FROM Cars WHERE Type = 'SUV';
 
--- 8️⃣ Retrieve Cars in a Specific Price Range
+--  Retrieve Cars in a Specific Price Range
 SELECT * FROM Cars WHERE Price BETWEEN 10000 AND 50000;
 
--- 9️⃣ Update Price of a Specific Car
+--  Update Price of a Specific Car
 UPDATE Cars SET Price = 26000 WHERE Model = 'Civic';
 
--- 🔟 Mark a Car as Sold
+-- Mark a Car as Sold
 UPDATE Cars SET Sold = TRUE WHERE Model = 'Swift';
 
 -- 1️⃣1️⃣ Retrieve All Sold Cars
